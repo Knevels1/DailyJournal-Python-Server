@@ -22,3 +22,12 @@ INSERT INTO `Journal_Entries` VALUES (NULL,'Python','Python is amazing!','02/02/
 INSERT INTO `Journal_Entries` VALUES (NULL,'SQL','Is hard to understand but practice makes perfect','08/19/27',2);
 INSERT INTO `Journal_Entries` VALUES (NULL,'following the ball','helps you to understand the code!','01/30/45',1);
 INSERT INTO `Journal_Entries` VALUES (NULL,'clients and servers','better understanding of how the internet works!','03/11/70',1);
+
+        SELECT
+            e.concept,
+            e.entry,
+            e.date,
+            e.mood_id,
+            e.id
+        FROM Journal_Entries e
+        WHERE entry LIKE "better%";

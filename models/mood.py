@@ -1,5 +1,6 @@
 class Mood():
 
-    def __init__(self, id, name):
-        self.id = id
+    def __init__(self, name, id=""):
         self.name = name
+        if id !="":
+            self.id = id

@@ -42,7 +42,7 @@ def get_all_entries():
             # Entry class.
             journal_entry = Journal_Entries(row['id'], row['concept'], row['entry'],
                                          row['date'], row['mood_id'])
-            mood = Mood(row['id'], row['name'])
+            mood = Mood(row['name'])
             journal_entry.mood = mood.__dict__
 
             journal_entries.append(journal_entry.__dict__)
@@ -76,7 +76,7 @@ def get_single_entry(id):
         # Create an animal instance from the current row
         journal_entry = Journal_Entries(data['id'], data['concept'], data['entry'],
                                      data['date'], data['mood_id'])
-        mood = Mood(data['id'], data['name'])
+        mood = Mood(data['name'])
         journal_entry.mood = mood.__dict__
 
         return json.dumps(journal_entry.__dict__)
