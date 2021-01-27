@@ -1,6 +1,6 @@
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from Entries import get_all_entries, get_single_entry
+from Entries import get_all_entries, get_single_entry,delete_entry
 
 
 # Here's a class. It inherits from another class.
@@ -74,6 +74,19 @@ class HandleRequests(BaseHTTPRequestHandler):
                     response = f"{get_all_entries()}"
 
         self.wfile.write(response.encode())
+    def do_DELETE(self):
+        # Set a 204 response code
+        self._set_headers(204)
+
+        # Parse the URL
+        (resource, id) = self.parse_url(self.path)
+
+        # Delete a single animal from the list
+        if resource == "entries":
+            delete_entry(id)
+
+        # Encode the new employee and send in response
+        self.wfile.write("".encode())
 # This function is not inside the class. It is the starting
 # point of this application.
 def main():
