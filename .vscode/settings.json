@@ -3,7 +3,7 @@
         {
             "previewLimit": 50,
             "driver": "SQLite",
-            "name": "DailyJournal Python Server",
+            "name": "DailyJournal Server",
             "database": "dailyjournal.db"
         }
     ]
