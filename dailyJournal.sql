@@ -7,7 +7,7 @@ CREATE TABLE `Journal_Entries` (
 );
 CREATE TABLE `Moods` (
     `id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    `mood` VARCHAR,
+    `name` VARCHAR,
     FOREIGN KEY(`id`) REFERENCES `Journal_Entries`(`mood_id`)
 );
 -- making mood data

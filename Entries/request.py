@@ -1,6 +1,7 @@
 import sqlite3
 import json
 from models import Journal_Entries
+from models.mood import Mood
 
 
 def get_all_entries():
@@ -18,8 +19,12 @@ def get_all_entries():
             e.concept,
             e.entry,
             e.date,
-            e.mood_id
+            e.mood_id,
+            m.name
         FROM Journal_Entries e
+        JOIN Moods m
+            ON m.id = e.mood_id
+
         """)
 
         # Initialize an empty list to hold all journal entry representations
@@ -37,6 +42,8 @@ def get_all_entries():
             # Entry class.
             journal_entry = Journal_Entries(row['id'], row['concept'], row['entry'],
                                          row['date'], row['mood_id'])
+            mood = Mood(row['id'], row['name'])
+            journal_entry.mood = mood.__dict__
 
             journal_entries.append(journal_entry.__dict__)
 
@@ -55,8 +62,11 @@ def get_single_entry(id):
             e.concept,
             e.entry,
             e.date,
-            e.mood_id
-        FROM journal_entries e
+            e.mood_id,
+            m.name
+        FROM Journal_Entries e
+        JOIN Moods m
+            ON m.id = e.mood_id
         WHERE e.id = ?
         """, (id, ))
 
@@ -66,6 +76,8 @@ def get_single_entry(id):
         # Create an animal instance from the current row
         journal_entry = Journal_Entries(data['id'], data['concept'], data['entry'],
                                      data['date'], data['mood_id'])
+        mood = Mood(data['id'], data['name'])
+        journal_entry.mood = mood.__dict__
 
         return json.dumps(journal_entry.__dict__)
 def delete_entry(id):
