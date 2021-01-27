@@ -17,8 +17,8 @@ INSERT INTO `Moods` VALUES (NULL, 'Confused');
 INSERT INTO `Moods` VALUES (NULL, 'Worried');
 INSERT INTO `Moods` VALUES (NULL, 'Frustrated');
 -- making journal data
-INSERT INTO `Journal_Entries` VALUES (NULL,'React','React is alright and very versitile ','05/23/20',NULL);
-INSERT INTO `Journal_Entries` VALUES (NULL,'Python','Python is amazing!','02/02/20',NULL);
-INSERT INTO `Journal_Entries` VALUES (NULL,'SQL','Is hard to understand but practice makes perfect','08/19/27',NULL);
-INSERT INTO `Journal_Entries` VALUES (NULL,'following the ball','helps you to understand the code!','01/30/45',NULL);
-INSERT INTO `Journal_Entries` VALUES (NULL,'clients and servers','better understanding of how the internet works!','03/11/70',NULL);
+INSERT INTO `Journal_Entries` VALUES (NULL,'React','React is alright and very versitile ','05/23/20',1);
+INSERT INTO `Journal_Entries` VALUES (NULL,'Python','Python is amazing!','02/02/20',4);
+INSERT INTO `Journal_Entries` VALUES (NULL,'SQL','Is hard to understand but practice makes perfect','08/19/27',2);
+INSERT INTO `Journal_Entries` VALUES (NULL,'following the ball','helps you to understand the code!','01/30/45',1);
+INSERT INTO `Journal_Entries` VALUES (NULL,'clients and servers','better understanding of how the internet works!','03/11/70',1);
